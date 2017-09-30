@@ -1,18 +1,4 @@
-/*
-Controlar por Bluetooth el Arduino para aplicaciones como Carros, Brazos acrobáticos, Mandos a distancia, Automatizacion, etc...
-Que envía esta App por el modulo Bluetooth:
-Flecha Arriba = Caracter 'a'
-Flecha Izquierda = Caracter 'b'
-Boton Cuadrado = Caracter 'c'
-Flecha Derecha = Caracter 'd'
-Flecha Abajo = Caracter 'e'
-Boton ON = Caracter 'f'
-Boton OFF = Caracter 'g'
-Boton Bluetooth = Es para seleccionar el Modulo Bluetooth a que se va a conectar 
-(El modulo bluetooth debe estar previamente sincronizado con su telefono Android
 
-Para realizar Pruebas conecte LEDs a los puertos PWM 5, 6, 9, 10 del Arduino, en el proyecto final a esos puertos se conecta el puente H, Cargue al Arduino el siguiente codigo:
-*/
 
 int izqA = 2; 
 int izqB = 3; 
