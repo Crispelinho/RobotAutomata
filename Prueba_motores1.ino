@@ -62,4 +62,50 @@ estado = Serial.read();
     analogWrite(derB, vel); 
     analogWrite(izqB, vel); 
     }
+     if (estado =='f'){ // Boton ON se mueve sensando distancia 
+    digitalWrite(ptrig,HIGH);
+    delay(0.01);
+    digitalWrite(ptrig,LOW);
+
+    duracion = pulseIn(pecho,HIGH);
+    distancia = (duracion/2)/29;
+    delay(10);
+
+    if(distancia <= 15 && distancia >= 2)
+      {
+      digitalWrite(13,HIGH);
+      analogWrite(derB,0);
+      analogWrite(izqB,0);
+      analogWrite(derA,0);
+      analogWrite(izqA,0);
+      delay(200);
+
+    analogWrite(derB,vel);
+    analogWrite(izqB,vel);
+    delay(500);
+
+    analogWrite(derB,0);
+    analogWrite(izqB,0);
+    analogWrite(derA,0);
+    analogWrite(izqA,vel);    
+    delay(1100);  
+
+    digitalWrite(13,LOW);
+    }
+
+  else
+      {//Sino hay obstáculos se desplaza al frente
+      analogWrite(derB,0);
+      analogWrite(izqB,0);
+      analogWrite(derA,vel);
+      analogWrite(izqA,vel);  
+      }
+  }
+
+    if (estado=='g'){ // Boton OFF, detiene los motores no hace nada 
+      analogWrite(derB,0);
+      analogWrite(izqB,0);
+      analogWrite(derA,0);
+      analogWrite(izqA,0);  
+     }
 }
